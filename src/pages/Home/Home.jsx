@@ -74,7 +74,7 @@ function Home() {
 
         <div className="hero-portal-box">
           <img
-            src="/images/rick_morty.jpg"
+            src={`${import.meta.env.BASE_URL}images/rick_morty.jpg`}
             alt="Portal de Rick and Morty"
             className="hero-rick_morty-image"
           />
