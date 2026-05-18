@@ -1,0 +1,794 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.main-content {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 34px 0 64px;
+}
+
+/* =========================
+   BARRA SUPERIOR
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(13, 71, 92, 0.14);
+  background: rgba(237, 255, 222, 0.88);
+  backdrop-filter: blur(16px);
+}
+
+.navbar-inner {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 92px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+.hero-rick_morty-image {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 14px rgba(132, 255, 73, 0.45));
+}
+.brand-portal {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+
+  background-image: url("/images/po.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: drop-shadow(0 0 10px rgba(132, 255, 73, 0.75));
+}
+.brand-overline {
+  margin: 0 0 2px;
+  color: #3f6673;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.brand-title {
+  margin: 0;
+  color: #10384a;
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  line-height: 1;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  text-decoration: none;
+  border-radius: 999px;
+  color: #123d50;
+  font-weight: 800;
+  border: 1px solid rgba(20, 67, 83, 0.16);
+  background: rgba(255, 255, 255, 0.84);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+  background: rgba(231, 255, 191, 0.96);
+  box-shadow: 0 12px 20px rgba(18, 44, 61, 0.1);
+}
+
+.nav-link-active {
+  color: #103448;
+  border-color: rgba(98, 205, 68, 0.42);
+  background: linear-gradient(135deg, #dfff93, #90f04f);
+}
+
+/* =========================
+   CONTENIDO GENERAL
+========================= */
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* =========================
+   HERO PRINCIPAL
+========================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: 250px;
+  padding: clamp(28px, 4vw, 46px);
+  border-radius: 32px;
+  border: 1px solid rgba(57, 174, 105, 0.18);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(250, 255, 245, 0.98),
+      rgba(224, 255, 214, 0.96)
+    ),
+    #ffffff;
+  box-shadow: 0 24px 60px rgba(25, 58, 75, 0.12);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 270px;
+  height: 270px;
+  top: -150px;
+  right: -60px;
+  background: rgba(66, 217, 255, 0.2);
+}
+
+.hero::after {
+  width: 220px;
+  height: 220px;
+  bottom: -140px;
+  left: -70px;
+  background: rgba(157, 255, 91, 0.24);
+}
+
+.hero-copy,
+.hero-badge,
+.hero-portal-box {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-copy {
+  max-width: 760px;
+}
+
+.hero-kicker,
+.section-eyebrow {
+  margin: 0 0 9px;
+  color: #3d852e;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 900;
+}
+
+.hero h2 {
+  margin: 0 0 16px;
+  color: #12384c;
+  font-size: clamp(2rem, 4vw, 3.45rem);
+  line-height: 1.02;
+}
+
+.hero p:last-child {
+  margin: 0;
+  max-width: 700px;
+  color: #426475;
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+/* Si aún existe la caja SPA React, mantiene su estilo */
+.hero-badge {
+  width: 162px;
+  height: 162px;
+  flex: 0 0 162px;
+  border-radius: 34px;
+  display: grid;
+  place-content: center;
+  gap: 6px;
+  text-align: center;
+  color: #11374a;
+  border: 1px solid rgba(17, 55, 74, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 22px 38px rgba(24, 58, 74, 0.11);
+}
+
+.hero-badge span {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  font-weight: 900;
+}
+
+.hero-badge strong {
+  font-size: 1.7rem;
+}
+
+/* Imagen del portal que agregaste */
+.hero-portal-box {
+  position: relative;
+  width: 320px;
+  height: 230px;
+  flex: 0 0 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at center, rgba(153, 255, 93, 0.32), transparent 58%),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.55),
+      rgba(219, 255, 213, 0.42)
+    );
+  border: 1px solid rgba(119, 209, 74, 0.28);
+  box-shadow:
+    0 20px 40px rgba(21, 53, 67, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.hero-portal-box::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: rgba(126, 255, 69, 0.18);
+  filter: blur(6px);
+}
+
+.hero-rick_morty-image {
+  position: relative;
+  z-index: 1;
+  height: 92%;
+  width: auto;
+  max-width: 92%;
+  object-fit: contain;
+  display: block;
+  filter:
+    drop-shadow(0 10px 16px rgba(13, 38, 48, 0.24))
+    drop-shadow(0 0 12px rgba(139, 255, 78, 0.28));
+  transform: translateY(2px);
+}
+.hero-portal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 18px rgba(132, 255, 73, 0.62));
+}
+
+/* =========================
+   ENCABEZADOS DE SECCIÓN
+========================= */
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 4px;
+}
+
+.section-heading h3,
+.filter-panel h3 {
+  margin: 0;
+  color: #12384c;
+  font-size: clamp(1.45rem, 2.5vw, 2.05rem);
+}
+
+.section-summary {
+  margin: 0;
+  max-width: 420px;
+  color: #12384c;
+  line-height: 1.6;
+  text-align: right;
+  
+}
+
+/* =========================
+   GRID DE PERSONAJES
+========================= */
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.character-card {
+  width: 100%;
+  max-width: 345px;
+  justify-self: center;
+  overflow: hidden;
+  border-radius: 24px !important;
+  border: 1px solid rgba(20, 54, 74, 0.1);
+  background: #ffffff !important;
+  box-shadow: 0 18px 42px rgba(17, 48, 64, 0.13) !important;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.character-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(98, 205, 68, 0.48);
+  box-shadow: 0 25px 54px rgba(17, 48, 64, 0.18) !important;
+}
+
+.character-card-action {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch !important;
+}
+
+.character-image-wrap {
+  height: 300px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(20, 54, 74, 0.08);
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(200, 255, 160, 0.7),
+      rgba(231, 243, 247, 0.9)
+    );
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 320ms ease;
+}
+
+.character-card:hover .character-image {
+  transform: scale(1.055);
+}
+
+.character-card-content {
+  width: 100%;
+  flex: 1;
+  padding: 22px !important;
+}
+
+.character-name {
+  min-height: 64px;
+  margin-bottom: 14px !important;
+  color: #12384c !important;
+  font-weight: 900 !important;
+  line-height: 1.18 !important;
+  font-size: 1.42rem !important;
+}
+
+.character-details {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: #f5f8f9;
+}
+
+.detail-row dt,
+.detail-row dd {
+  margin: 0;
+}
+
+.detail-row dt {
+  color: #617886;
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.detail-row dd {
+  color: #17374a;
+  font-weight: 800;
+  text-align: right;
+}
+
+.detail-row-status {
+  align-items: center;
+}
+
+.character-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 13px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.character-status-alive {
+  color: #1f5b22;
+  background: #d8ffc2;
+}
+
+.character-status-dead {
+  color: #8b1f27;
+  background: #ffd7db;
+}
+
+.character-status-unknown {
+  color: #765613;
+  background: #ffefb8;
+}
+
+/* =========================
+   LOADING / ERROR / VACÍO
+========================= */
+
+.feedback-panel {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  gap: 13px;
+  padding: 34px;
+  text-align: center;
+  border-radius: 28px;
+  border: 1px solid rgba(20, 54, 74, 0.1);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 44px rgba(19, 50, 66, 0.08);
+}
+
+.feedback-panel h2,
+.feedback-panel p {
+  margin: 0;
+}
+
+.feedback-panel h2 {
+  color: #14364a;
+  font-size: 1.55rem;
+}
+
+.feedback-panel p {
+  color: #536d7c;
+  line-height: 1.65;
+}
+
+.loading-panel p {
+  color: #2f6d26;
+  font-weight: 900;
+}
+
+.loading-spinner {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 7px solid rgba(142, 224, 92, 0.24);
+  border-top-color: #68c745;
+  animation: spin 760ms linear infinite;
+}
+
+.error-panel {
+  border-color: rgba(203, 64, 79, 0.22);
+  background: rgba(255, 248, 249, 0.96);
+}
+
+.empty-panel {
+  border-color: rgba(214, 162, 31, 0.24);
+  background: rgba(255, 252, 242, 0.96);
+}
+
+/* =========================
+   FILTRO POR ESPECIE
+========================= */
+
+.filter-panel {
+  display: grid;
+  grid-template-columns: 1fr minmax(230px, 320px);
+  align-items: end;
+  gap: 20px 24px;
+  padding: 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(57, 174, 105, 0.16);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(18, 46, 62, 0.09);
+}
+
+.select-label {
+  grid-column: 2;
+  margin-bottom: -12px;
+  color: #53707e;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.species-select {
+  grid-column: 2;
+  min-height: 56px;
+  width: 100%;
+  padding: 0 18px;
+  border-radius: 18px;
+  border: 2px solid rgba(89, 196, 61, 0.34);
+  color: #14364a;
+  background: #f7fff1;
+  outline: none;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.species-select:focus {
+  border-color: #67c543;
+  box-shadow: 0 0 0 4px rgba(103, 197, 67, 0.18);
+}
+
+/* =========================
+   PAGINACIÓN
+========================= */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.pagination-button,
+.primary-link-button {
+  min-height: 52px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  color: #103448;
+  background: linear-gradient(135deg, #e3ff9a, #96f150);
+  box-shadow: 0 16px 28px rgba(88, 146, 52, 0.18);
+  text-decoration: none;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+.pagination-button:hover:not(:disabled),
+.primary-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(88, 146, 52, 0.24);
+}
+
+.pagination-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagination-info {
+  padding: 0 4px;
+  color: #496373;
+  font-weight: 800;
+}
+
+/* =========================
+   PÁGINA 404
+========================= */
+
+.not-found-page {
+  min-height: calc(100vh - 220px);
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.not-found-code {
+  margin: 0;
+  color: #79cc46;
+  font-size: clamp(4.2rem, 10vw, 7rem);
+  line-height: 1;
+  font-weight: 1000;
+}
+
+.not-found-page h2 {
+  margin: 0;
+  color: #14364a;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.not-found-page p:not(.not-found-code) {
+  max-width: 540px;
+  margin: 0;
+  color: #546f7f;
+  line-height: 1.7;
+}
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 860px) {
+  .navbar-inner,
+  .main-content {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .navbar-inner {
+    min-height: auto;
+    padding: 18px 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .nav-menu {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    min-height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-badge {
+    width: 142px;
+    height: 142px;
+    flex-basis: 142px;
+  }
+
+  .hero-portal-box {
+    width: 160px;
+    height: 160px;
+    flex-basis: 160px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section-summary {
+    text-align: left;
+  }
+
+  .filter-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .select-label,
+  .species-select {
+    grid-column: auto;
+  }
+}
+
+/* =========================
+   RESPONSIVE MÓVIL
+========================= */
+
+@media (max-width: 520px) {
+  .main-content {
+    width: calc(100% - 22px);
+    padding: 24px 0 52px;
+  }
+
+  .navbar-inner {
+    width: calc(100% - 22px);
+  }
+
+  .brand {
+    justify-content: flex-start;
+  }
+
+  .brand-portal {
+    width: 50px;
+    height: 50px;
+  }
+
+  .nav-menu,
+  .nav-link {
+    width: 100%;
+  }
+
+  .hero,
+  .filter-panel,
+  .feedback-panel {
+    border-radius: 24px;
+  }
+
+  .hero {
+    padding: 24px;
+  }
+
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-card {
+    max-width: none;
+  }
+
+  .character-image-wrap {
+    height: 285px;
+  }
+
+  .detail-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .detail-row dd {
+    text-align: left;
+  }
+
+  .pagination {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pagination-button,
+  .pagination-info {
+    width: 100%;
+    text-align: center;
+  }
+}
