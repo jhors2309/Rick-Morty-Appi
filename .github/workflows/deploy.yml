@@ -1,4 +1,4 @@
-# Flujo para publicar la app de React + Vite en GitHub Pages
+
 name: Deploy static content to Pages
 
 on:
@@ -35,7 +35,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --include=dev
 
       - name: Build
         run: npm run build
